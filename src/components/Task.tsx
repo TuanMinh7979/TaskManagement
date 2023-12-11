@@ -1,7 +1,7 @@
 import React, { forwardRef, useState, useEffect } from "react";
 import Icon from "./Icon";
 import { MdDelete, MdEdit, MdSave } from "react-icons/md";
-import { TaskType } from "../Types";
+import { taskType } from "../Types";
 import { useDispatch, useSelector } from "react-redux";
 
 import { LuTimer } from "react-icons/lu";
@@ -22,7 +22,7 @@ import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 
 type TaskType = {
-  task: TaskType;
+  task: taskType;
   listId: string;
 };
 
@@ -35,7 +35,7 @@ const Task = ({ task, listId }: TaskType) => {
   const dispatch = useDispatch();
 
   const handleSave = () => {
-    const taskData: TaskType = {
+    const taskData: taskType = {
       id,
       title: homeTitle,
       description: homeDescription,
@@ -81,7 +81,7 @@ const Task = ({ task, listId }: TaskType) => {
       style={{ ...style, zIndex: 1 }}
       {...attributes}
       {...listeners}
-      className="task relative  p-2 mb-2 bg-white rounded-md drop-shadow-sm hover:bg-gray-300  "
+      className="task relative  p-2 mb-2 bg-white rounded-md drop-shadow-sm   "
     >
       <div>
         {editMode ? (

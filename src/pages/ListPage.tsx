@@ -3,7 +3,9 @@ import GroupTask from "../components/GroupTask";
 import { RootState } from "../redux/store";
 import { useDispatch, useSelector } from "react-redux";
 import DatePicker from "react-datepicker";
+
 import FlipMove from "react-flip-move";
+
 import Modal from "../components/Modal";
 import { setModalData, setModalIsShow } from "../redux/modalSlice";
 import { saveOrderTaskGroups, saveTaskDueTime } from "../redux/taskListSlice";
@@ -26,7 +28,7 @@ import {
   arrayMove,
 } from "@dnd-kit/sortable";
 import { mapOrder } from "../utils/funcs";
-import { TaskGroupType, TaskType } from "../Types";
+import { taskGroupType, taskType } from "../Types";
 type Props = {};
 
 function ListPage({}: Props) {
@@ -51,7 +53,7 @@ function ListPage({}: Props) {
     );
   };
 
-
+  //
   const handleDragEnd = (e: any) => {
     console.log(e);
     const { active, over } = e;
@@ -73,7 +75,7 @@ function ListPage({}: Props) {
 
 
 
-  const [sortedTaskGroups, setSortedTaskGroups] = useState<TaskGroupType[]>([]);
+  const [sortedTaskGroups, setSortedTaskGroups] = useState<taskGroupType[]>([]);
   useEffect(() => {
     if (sortedTaskGroups.length > 0) {
       dispatch(saveOrderTaskGroups(sortedTaskGroups.map((el) => el.id)));

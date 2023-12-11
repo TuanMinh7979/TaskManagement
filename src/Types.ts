@@ -1,15 +1,15 @@
 
 
 
-export type TaskGroupType = {
+export type taskGroupType = {
   id?: string;
   title: string;
   editMode?: boolean;
-  tasks?: TaskType[];
+  tasks?: taskType[];
   tasksOrder?:[]
 };
 
-export type TaskType = {
+export type taskType = {
   id?: string;
   title: string;
   description: string;

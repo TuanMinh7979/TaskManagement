@@ -25,7 +25,7 @@ import taskListSlice, {
 import Dropdown from "./Dropdown";
 import DropDownContent from "./DropDownContent";
 import MoreOptionWrapper from "./MoreOptionWrapper";
-import { TaskType } from "../Types";
+import { taskType } from "../Types";
 import { generateId } from "../utils/generates";
 import { validateGroupTask } from "../utils/validate";
 import { toast } from "react-toastify";
@@ -92,7 +92,7 @@ const GroupTask = ({ singleTaskList }: SingleTaskListPropTypes) => {
   useEffect(() => {
     if (filteredTasks && filterStatusValue !== "All") {
       setFilteredTask(
-        tasks.filter((el: TaskType) => el.status === filterStatusValue)
+        tasks.filter((el: taskType) => el.status === filterStatusValue)
       );
     } else {
       setFilteredTask([...tasks]);

@@ -5,7 +5,7 @@ import Layout from "./pages/Layout";
 import { useSelector } from "react-redux";
 import { RootState } from "./redux/store";
 import { useEffect } from "react";
-import { TaskType } from "./Types";
+import { taskType } from "./Types";
 
 function App() {
   // const taskList = useSelector(

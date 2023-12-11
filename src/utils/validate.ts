@@ -1,17 +1,17 @@
-import { TaskGroupType, TaskType } from "../Types";
+import { taskGroupType, taskType } from "../Types";
 
 export const isEmpty = (data: string) => {
   return data === "";
 };
 
-export const validateGroupTask = ({ title }: TaskGroupType) => {
+export const validateGroupTask = ({ title }: taskGroupType) => {
   let errorArray = [];
   if (isEmpty(title)) {
     errorArray.push("Title can not be empty");
   }
   return errorArray;
 };
-export const validateTask = ({ title, description }: TaskType) => {
+export const validateTask = ({ title, description }: taskType) => {
   let errorArray = [];
   if (isEmpty(title)) {
     errorArray.push("Title can not be empty");

@@ -1,15 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { TaskGroupType, TaskType } from "../Types";
+import { taskGroupType, taskType } from "../Types";
 
-export const defaultTaskList: TaskGroupType = {
+export const defaultTaskList: taskGroupType = {
   title: "Default task group title",
 };
-export const defaultTask: TaskType = {
+export const defaultTask: taskType = {
   title: "Default task title",
   description: "Default task description",
 };
 type taskListSliceType = {
-  currentTaskGroups: TaskGroupType[];
+  currentTaskGroups: taskGroupType[];
   orderTaskGroups: string[];
 };
 
@@ -244,7 +244,7 @@ const taskListSlice = createSlice({
         return tL;
       });
 
-      state.currentTaskGroups = updatedTaskList as TaskGroupType[];
+      state.currentTaskGroups = updatedTaskList as taskGroupType[];
       localStorage.setItem("data", JSON.stringify(state));
     },
   },

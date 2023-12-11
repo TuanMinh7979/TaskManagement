@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import FlipMove from "react-flip-move";
 import Task from "./Task";
-import { TaskType } from "../Types";
+import { taskType } from "../Types";
 import {
   DndContext,
   KeyboardSensor,
@@ -21,7 +21,7 @@ import { RootState } from "../redux/store";
 import { saveOrderTasks } from "../redux/taskListSlice";
 
 type TasksType = {
-  tasks: TaskType[];
+  tasks: taskType[];
   listId: string;
 };
 
@@ -32,7 +32,7 @@ function Tasks({ tasks, listId }: TasksType) {
       state.taskList.currentTaskGroups.find((el: any) => el.id == listId)
         ?.tasksOrder
   );
-  const [sortedTasks, setSortedTasks] = useState<TaskType[]>([]);
+  const [sortedTasks, setSortedTasks] = useState<taskType[]>([]);
   useEffect(() => {
     if (sortedTasks.length > 0) {
       dispatch(
