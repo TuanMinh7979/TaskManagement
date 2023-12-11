@@ -5,7 +5,9 @@ Feature:
 -Drag and drop Task inside a GroupTask
 -Drap and drop GroupTask inside web page
 -Save data in LocalStorage
+
 Framework/Programming Language: ReactJs, Typescript
+
 Techniques: Tailwindcss, Redux, dnd-kit(for drag and drop feature) 
 
 
