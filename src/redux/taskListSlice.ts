@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { taskGroupType, taskType } from "../Types";
-
+import { sampleData } from "../assets/defaultData";
 export const defaultTaskList: taskGroupType = {
   title: "Default task group title",
 };
@@ -8,7 +8,7 @@ export const defaultTask: taskType = {
   title: "Default task title",
   description: "Default task description",
 };
-type taskListSliceType = {
+type initStateType = {
   currentTaskGroups: taskGroupType[];
   orderTaskGroups: string[];
 };
@@ -21,12 +21,21 @@ const parseData = () => {
     return { currentTaskGroups: [], orderTaskGroups: [] };
   }
 };
-const initialState: taskListSliceType = parseData();
+const initialState: initStateType = parseData();
 
 const taskListSlice = createSlice({
   name: "taskList",
   initialState,
   reducers: {
+    showSampleData: (state, action) => {
+      console.log(sampleData);
+
+      state.currentTaskGroups = [
+        ...sampleData.currentTaskGroups,
+      ] as taskGroupType[];
+      state.orderTaskGroups = [...sampleData.orderTaskGroups] as string[];
+      localStorage.setItem("data", JSON.stringify(state));
+    },
     addTaskGroup: (state, action) => {
       const newTaskGroup = action.payload;
       newTaskGroup.editMode = true;
@@ -65,7 +74,6 @@ const taskListSlice = createSlice({
 
     saveTaskStatus: (state, action) => {
       // update task
-     
 
       const { listId, id, status } = action.payload;
 
@@ -190,7 +198,6 @@ const taskListSlice = createSlice({
     },
     saveTask: (state, action) => {
       // update task
-  
 
       const { listId, id, title, description } = action.payload;
 
@@ -212,7 +219,6 @@ const taskListSlice = createSlice({
     },
     saveTaskDueTime: (state, action) => {
       // update task
-      
 
       const { listId, id, due } = action.payload;
 
@@ -251,6 +257,7 @@ const taskListSlice = createSlice({
 });
 
 export const {
+  showSampleData,
   addTaskGroup,
   saveOrderTaskGroups,
   saveOrderTasks,

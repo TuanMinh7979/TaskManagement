@@ -15,7 +15,7 @@ module.exports = {
       },
       backgroundImage: (theme) => ({
         pattern:
-          "url('https://i.pinimg.com/736x/8c/98/99/8c98994518b575bfd8c949e91d20548b.jpg')",
+          "url('https://img.freepik.com/premium-vector/abstract-blue-green-gradient-color-effect-background-website-banner-poster-paper-card_120819-307.jpg')",
       }),
     },
   },

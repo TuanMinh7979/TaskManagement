@@ -58,7 +58,7 @@ function Tasks({ tasks, listId }: TasksType) {
 
   const mouseSensor = useSensor(MouseSensor, {
     activationConstraint: {
-      distance: 10,
+      distance: 15,
     },
   });
   const keyboardSensor = useSensor(KeyboardSensor);

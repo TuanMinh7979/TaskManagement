@@ -6,7 +6,7 @@ type InputProps = {
   type?: string;
   onChange?: (e: any) => void;
   className?: string;
-  onKeyDown?: (e: any) => void;
+
   disabled?: boolean;
 };
 
@@ -16,14 +16,14 @@ const Input = ({
   value,
   onChange,
   className,
-  onKeyDown,
+
   disabled,
 }: InputProps) => {
   return (
     <input
       value={value}
       onChange={onChange}
-      onKeyDown={onKeyDown}
+     
       type={type}
       placeholder={`Enter ${name}`}
       disabled={disabled}

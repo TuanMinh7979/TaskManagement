@@ -173,8 +173,8 @@ const GroupTask = ({ singleTaskList }: SingleTaskListPropTypes) => {
               }}
             >
               <Dropdown
-                contentStyleClass="mr-[14%] mt-[50px]"
-                chooseButtonStyleClass="w-[120px]"
+                contentStyleClass="mr-[10%] mt-[50px]"
+                chooseButtonStyleClass="w-[150px]"
                 list={[
                   { text: "All", id: "All" },
                   { text: "Pending", id: "Pending" },

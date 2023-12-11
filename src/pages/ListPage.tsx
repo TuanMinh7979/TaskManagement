@@ -131,7 +131,7 @@ function ListPage({}: Props) {
         />
       )}{" "}
       <div className="p-10">
-        {sortedTaskGroups &&
+        {sortedTaskGroups && initTaskGroups &&
           initTaskGroups.length === 0 &&
           sortedTaskGroups.length === 0 && (
             <h1 className="text-3xl text-center text-gray-500 mt-10">

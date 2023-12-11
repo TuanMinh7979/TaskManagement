@@ -106,7 +106,7 @@ const Task = ({ task, listId }: TaskType) => {
             />
             {dueTime ? (
               <span
-                className="inline-block w-1/4 text-[10px] cursor-pointer rounded-full hover:bg-blue-200"
+                className="inline-block w-1/4 text-[8px] cursor-pointer px-1 py-1 rounded-full hover:bg-blue-200"
                 onClick={(e) => {
                   e.stopPropagation();
                   dispatch(setModalIsShow(!modalStore.isShow));
@@ -152,7 +152,7 @@ const Task = ({ task, listId }: TaskType) => {
             />
             {dueTime ? (
               <span
-                className="border-2 block w-1/4 text-[10px] cursor-pointer rounded-full hover:bg-blue-200"
+                className="border-2 block w-1/4 text-[8px] cursor-pointer  px-1 py-1 rounded-full hover:bg-blue-200"
                 onClick={(e) => {
                   e.stopPropagation();
                   dispatch(setModalIsShow(!modalStore.isShow));
